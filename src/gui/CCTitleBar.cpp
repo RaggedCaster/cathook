@@ -40,13 +40,13 @@ void CTitleBar::Update() {
 	if (m_iDraggingStage == 0) {
 		m_iDraggingStage = 1;
 	} else {
-		int dx = g_pGUI->m_iMouseX - m_nLastX;
-		int dy = g_pGUI->m_iMouseY - m_nLastY;
+		int dx = g_pGUI->mouse_x - m_nLastX;
+		int dy = g_pGUI->mouse_y - m_nLastY;
 		auto offset = GetParent()->GetOffset();
 		GetParent()->SetOffset(offset.first + dx, offset.second + dy);
 	}
-	m_nLastX = g_pGUI->m_iMouseX;
-	m_nLastY = g_pGUI->m_iMouseY;
+	m_nLastX = g_pGUI->mouse_x;
+	m_nLastY = g_pGUI->mouse_y;
 }
 
 

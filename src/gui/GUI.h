@@ -33,37 +33,29 @@ int GUIColor();
 
 extern CatVar gui_visible;
 extern CatVar gui_draw_bounds;
-constexpr bool gui_nullcore = true;
 
 class CatGUI {
 public:
 	CatGUI();
-	~CatGUI();
 
 	bool Visible();
 	void Update();
 	void Setup();
-	RootWindow* GetRootWindow();
 	bool ConsumesKey(ButtonCode_t key);
 
-	void ShowTooltip(std::string text);
+	IWidget* CurrentSystem();
 
-	CTooltip* m_pTooltip;
-	RootWindow* m_pRootWindow;
+	// TODO Probably use unique_ptr or shared_ptr?
+	std::vector<IWidget*> systems {};
 
-	// TODO NullCore tooltip
-	menu::ncc::Root* root_nullcore;
-
-	int  last_scroll_value;
-	bool m_bShowTooltip;
-	bool m_bConsumeKeys;
-	bool m_bKeysInit;
-	bool m_bPressedState[ButtonCode_t::BUTTON_CODE_COUNT];
-	int  m_iPressedFrame[ButtonCode_t::BUTTON_CODE_COUNT];
-	int  m_iMouseX;
-	int  m_iMouseY;
-	int  mouse_dx;
-	int  mouse_dy;
+	int  last_scroll_value { 0 };
+	bool keys_init { false };
+	bool keys_pressed[ButtonCode_t::BUTTON_CODE_COUNT] { false };
+	int  keys_pressed_frame[ButtonCode_t::BUTTON_CODE_COUNT] { 0 };
+	int  mouse_x { 0 };
+	int  mouse_y { 0 };
+	int  mouse_dx { 0 };
+	int  mouse_dy { 0 };
 };
 
 extern CatGUI* g_pGUI;

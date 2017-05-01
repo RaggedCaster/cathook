@@ -53,18 +53,18 @@ float CSlider::Value() {
 void CSlider::Update() {
 	if (IsPressed()) {
 		if (m_bDragInit) {
-			int delta = m_nLastX - g_pGUI->m_iMouseX;
+			int delta = m_nLastX - g_pGUI->mouse_x;
 			if (delta) {
 				auto abs = AbsolutePosition();
 				auto size = GetSize();
-				int mv = g_pGUI->m_iMouseX - abs.first;
+				int mv = g_pGUI->mouse_x - abs.first;
 				if (mv < 0) mv = 0;
 				if (mv > size.first) mv = size.first;
 				SetValue(((float)mv / (float)size.first) * (Props()->GetFloat("value_max") - Props()->GetFloat("value_min")) + Props()->GetFloat("value_min"));
 				m_nSliderPos = mv;
 			}
 		}
-		m_nLastX = g_pGUI->m_iMouseX;
+		m_nLastX = g_pGUI->mouse_x;
 		m_bDragInit = true;
 	} else m_bDragInit = false;
 }

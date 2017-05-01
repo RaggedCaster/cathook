@@ -147,7 +147,7 @@ void CBaseContainer::OnMouseLeave() {
 void CBaseContainer::OnMousePress() {
 	CBaseWidget::OnMousePress();
 	auto abs = AbsolutePosition();
-	PressOn(ChildByPoint(g_pGUI->m_iMouseX - abs.first, g_pGUI->m_iMouseY - abs.second));
+	PressOn(ChildByPoint(g_pGUI->mouse_x - abs.first, g_pGUI->mouse_y - abs.second));
 }
 
 void CBaseContainer::OnMouseRelease() {
@@ -172,7 +172,7 @@ void CBaseContainer::SortByZIndex() {
 
 void CBaseContainer::UpdateHovers() {
 	auto abs = AbsolutePosition();
-	auto hovered = ChildByPoint(g_pGUI->m_iMouseX - abs.first, g_pGUI->m_iMouseY - abs.second);
+	auto hovered = ChildByPoint(g_pGUI->mouse_x - abs.first, g_pGUI->mouse_y - abs.second);
 	if (hovered != GetHoveredChild()) {
 		HoverOn(hovered);
 	}

@@ -15,7 +15,9 @@ namespace menu { namespace ncc {
 
 Texture logo_texture(&_binary_logo_start, 768, 384);
 
+// As this gets called once, we can use ncc::Init here.
 Root::Root() : CBaseWindow("root_nullcore", nullptr) {
+	menu::ncc::Init();
 	SetMaxSize(draw::width, draw::height);
 }
 
@@ -26,7 +28,7 @@ void Root::Update() {
 
 void Root::Draw(int x, int y) {
 	if (tooltip->IsVisible()) {
-		tooltip->SetOffset(g_pGUI->m_iMouseX + 24, g_pGUI->m_iMouseY + 8);
+		tooltip->SetOffset(g_pGUI->mouse_x + 24, g_pGUI->mouse_y + 8);
 	}
 	CBaseContainer::Draw(x, y);
 }

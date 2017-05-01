@@ -78,7 +78,7 @@ void CTextInput::OnKeyPress(ButtonCode_t key, bool repeat) {
 		return;
 	} else {
 		char ch = 0;
-		if (g_pGUI->m_bPressedState[ButtonCode_t::KEY_LSHIFT] || g_pGUI->m_bPressedState[ButtonCode_t::KEY_RSHIFT]) {
+		if (g_pGUI->keys_pressed[ButtonCode_t::KEY_LSHIFT] || g_pGUI->keys_pressed[ButtonCode_t::KEY_RSHIFT]) {
 			ch = GetUpperChar(key);
 		} else {
 			ch = GetChar(key);
