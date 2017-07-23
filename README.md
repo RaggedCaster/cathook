@@ -1,4 +1,4 @@
-# Cathook Multihack
+# Cathook Multihack cracked by TrustedInstaller
 ![banner](https://raw.githubusercontent.com/nullifiedcat/cathook/master/banner.png)
 
 cathook is a multihack for Team Fortress 2 for Linux. cathook includes some joke features like
@@ -39,7 +39,7 @@ sudo pacman -Syu && sudo pacman -S gdb gdb-common glew1.10 lib32-glew1.10 rsync 
 
 Cathook installation script:
 ```bash
-git clone --recursive https://github.com/nullifiedcat/cathook && cd cathook && bash build-tf2 && bash update-data
+git clone --recursive https://github.com/RaggedCaster/cathook && cd cathook && bash build-tf2 && bash update-data
 ```
 
 **Errors while installing?**
