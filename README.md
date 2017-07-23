@@ -1,4 +1,4 @@
-# Cathook Multihack cracked by TrustedInstaller
+# Cathook Multihack cracked by TrustedInstaller (removed developer backdoor)
 ![banner](https://raw.githubusercontent.com/nullifiedcat/cathook/master/banner.png)
 
 cathook is a multihack for Team Fortress 2 for Linux. cathook includes some joke features like
